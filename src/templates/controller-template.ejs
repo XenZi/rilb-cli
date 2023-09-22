@@ -2,11 +2,11 @@ import { controller, httpGet } from "inversify-express-utils";
 import { Request,Response } from "express"; 
 
 
-@controller("<%= entityNameWithUpperFirst %>") 
+@controller("/<%= entityNameWithLowererFirst %>") 
 class <%=entityNameWithUpperFirst %>Controller { 
     constructor() {} 
 
-    @httpGet("/<%= entityNameWithLowerFirst %>") 
+    @httpGet("/") 
     get(req:Request, res: Response) { 
         // Controller logic here 
     } 
