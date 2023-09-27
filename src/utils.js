@@ -19,13 +19,23 @@ export const formatPath = (path, name, layer) => {
 export const formatImportStatement = (entityType, entityName) => {
   let importStatement = "";
   if (entityType == "service" || entityType == "repository") {
-    importStatement = `import ${transformFirstLetterToUpperCase(
-      entityName
-    )}${transformFirstLetterToUpperCase(
-      entityType
-    )} from "./${entityType}s/${transformFirstLetterToLowerCase(
-      entityName
-    )}.${entityType}";\n`;
+    if (entityType == "repository") {
+      importStatement = `import ${transformFirstLetterToUpperCase(
+        entityName
+      )}${transformFirstLetterToUpperCase(
+        entityType
+      )} from "./${entityType}/${transformFirstLetterToLowerCase(
+        entityName
+      )}.${entityType}";\n`;
+    } else {
+      importStatement = `import ${transformFirstLetterToUpperCase(
+        entityName
+      )}${transformFirstLetterToUpperCase(
+        entityType
+      )} from "./${entityType}s/${transformFirstLetterToLowerCase(
+        entityName
+      )}.${entityType}";\n`;
+    }
   } else {
     importStatement = `import "./${entityType}s/${transformFirstLetterToLowerCase(
       entityName

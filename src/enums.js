@@ -13,4 +13,5 @@ export const TEMPLATE_PATHS = Object.freeze({
 export const FOLDER_PATHS = Object.freeze({
   CONTROLLER_PATH: path.join(rootFolderPath, "src/controllers"),
   SERVICE_PATH: path.join(rootFolderPath, "src/services"),
+  REPOSITORY_PATH: path.join(rootFolderPath, 'src/repository')
 });

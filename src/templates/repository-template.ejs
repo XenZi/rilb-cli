@@ -1,0 +1,11 @@
+import { injectable } from "inversify";
+import { Database } from "src/data-source/database.context";
+
+@injectable()
+class <%= entityNameWithUpperFirst %>Repository {
+    constructor(private readonly database: Database) {
+
+    }
+}
+
+export default <%= entityNameWithUpperFirst %>Repository;

@@ -9,6 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import ServiceGenerator from "./generators/service-generator.js";
 import ControllerGenerator from "./generators/controller-generator.js";
+import RepositoryGenerator from "./generators/repository-generator.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const rootFolderPath = process.cwd();
@@ -36,7 +37,7 @@ program
     } else if (layer == "controller") {
       ControllerGenerator();
     } else if (layer == "repository") {
-      console.log("Repository");
+      RepositoryGenerator();
     } else {
       console.log(
         "Layers that you can create: controller, repository, service"
